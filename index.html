@@ -11,12 +11,12 @@
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cowboy Vehicle Shipping">
-<meta property="og:title" content="Cowboy Vehicle Shipping — Reliable Nationwide Auto Transport">
-<meta property="og:description" content="Licensed, insured nationwide vehicle shipping with transparent pricing, vetted carriers, and support from quote to delivery. Get an instant quote.">
+<meta property="og:title" content="Cowboy Vehicle Shipping">
+<meta property="og:description" content="Door-to-door vehicle shipping across all 50 states. Open and enclosed carriers, upfront pricing, and a free instant quote.">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cowboy Vehicle Shipping — Reliable Nationwide Auto Transport">
-<meta name="twitter:description" content="Licensed, insured nationwide vehicle shipping with transparent pricing, vetted carriers, and support from quote to delivery. Get an instant quote.">
-<meta name="description" content="Licensed, insured nationwide vehicle shipping with transparent pricing, vetted carriers, and support from quote to delivery. Get an instant quote.">
+<meta name="twitter:title" content="Cowboy Vehicle Shipping">
+<meta name="twitter:description" content="Door-to-door vehicle shipping across all 50 states. Open and enclosed carriers, upfront pricing, and a free instant quote.">
+<meta name="description" content="Cowboy Vehicle Shipping moves cars, trucks, SUVs and motorcycles door to door across all 50 states. Open and enclosed carriers, upfront pricing, and a free instant quote.">
 
 <!--
   ============================================================
@@ -50,7 +50,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* =========================================================
    Cowboy Vehicle Shipping — design tokens
@@ -932,6 +932,156 @@ body.ready .reveal{opacity:1;transform:none}
 .cv-flogo{width:170px;height:auto;display:block;margin-bottom:16px}
 .btn-call.cv-nophone svg{display:none}
 @media (max-width:600px){.cv-mark{height:36px}.cv-word strong{font-size:20px}.cv-word span{display:none}}
+
+/* =====================================================================
+   COWBOY IDENTITY: type, shapes and layout that set this site apart
+   ===================================================================== */
+:root{
+  --font-display:"Montserrat","Arial Black",Arial,sans-serif;
+  --font-body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  --r-card:8px; --r-field:6px;
+  --cv-navy:#0a1d35; --cv-navy-2:#102c50; --cv-silver:#b0b8c4; --cv-steel:#5d6876; --cv-rule:#dde2e8; --cv-mist:#f3f5f8;
+}
+body{font-size:17px}
+h1,h2,h3{letter-spacing:-.015em}
+.cv-eyebrow,.lp-eyebrow,.hp-eyebrow,.loc-eyebrow,.faq-eyebrow{font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cv-steel)!important;display:flex;align-items:center;gap:10px;justify-content:flex-start;margin:0 0 12px}
+.cv-eyebrow::before,.lp-eyebrow::before,.hp-eyebrow::before,.loc-eyebrow::before,.faq-eyebrow::before{content:"";width:14px;height:14px;background:var(--cv-navy);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.loc-accent,.faq-accent,.wc-eyebrow-line{display:none!important}
+
+/* header: solid white bar, squared button */
+.site-header{background:#fff!important;border-bottom:1px solid var(--cv-rule);backdrop-filter:none!important}
+.site-header .main-nav a{font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--cv-navy)}
+.site-header .btn-call,.btn-call{background:var(--cv-navy)!important;color:#fff!important;border:0!important;border-radius:4px!important;box-shadow:none!important;font-family:var(--font-display);font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;padding:13px 20px}
+.site-header .btn-call:hover{background:var(--cv-navy-2)!important}
+
+/* hero: navy field with the logo star */
+.hero.hero-lite{background:var(--cv-navy)!important}
+.hero.hero-lite .hero-copy{color:#fff}
+.hero.hero-lite .hero-copy h1{color:#fff!important;font-weight:800;font-size:clamp(2.2rem,4.6vw,3.5rem);line-height:1.06}
+.hero.hero-lite .hero-copy h1 .accent{color:var(--cv-silver)!important}
+.hero.hero-lite .hero-copy .lede{color:#d5dbe4!important}
+.cv-kicker{font-family:var(--font-display);font-weight:700;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--cv-silver);margin:0 0 14px}
+.hero.hero-lite .hero-badges .hb b{color:#fff!important}
+.hero.hero-lite .hero-badges .hb small{color:#b9c2ce!important}
+.hero.hero-lite .hero-badges .hb-ic{background:transparent!important;border:1px solid rgba(176,184,196,.5)!important;color:var(--cv-silver)!important;border-radius:6px!important}
+.hero.hero-lite .hero-creds span{background:transparent!important;border:1px solid rgba(176,184,196,.45)!important;color:#dfe4ea!important;border-radius:4px!important}
+.hero .pquote{border-radius:10px!important}
+.pq-btn,.pq-btn-ghost{border-radius:5px!important}
+.pq-btn{background:var(--cv-navy)!important;font-family:var(--font-display);letter-spacing:.03em}
+.pq-lightning{border-radius:6px!important}
+
+/* trust strip (replaces the big-number band) */
+.cv-trust{background:#fff;border-bottom:1px solid var(--cv-rule)}
+.cv-trust ul{list-style:none;margin:0;padding:22px 0;display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:12px 28px}
+.cv-trust li{display:flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;color:var(--cv-navy)}
+.cv-trust svg{color:var(--cv-navy);flex:none}
+
+/* section heads: left aligned */
+.lp-head,.hp-head{text-align:left!important;margin-left:0!important;margin-right:0!important;max-width:760px!important}
+.lp-head .lp-sub,.hp-head .hp-sub{margin-left:0!important;margin-right:0!important;text-align:left!important}
+.lp-head h2,.hp-head h2,.loc-intro h2,.faq-head h2,.cv-why-head h2,.hp-about-copy h2{font-weight:800;color:var(--cv-navy)}
+
+/* services: white cards, solid navy icon tiles */
+.hp-services{background:var(--cv-mist)!important}
+.hp-serv{background:#fff!important;border:1px solid var(--cv-rule)!important;border-radius:8px!important;box-shadow:none!important;border-top:3px solid var(--cv-navy)!important}
+.hp-serv:hover{box-shadow:0 14px 30px -18px rgba(10,29,53,.45)!important}
+.hp-serv-ic{background:var(--cv-navy)!important;color:#fff!important;border-radius:6px!important}
+.hp-serv-link{color:var(--cv-navy)!important;font-weight:700}
+
+/* process: open columns on a rule, big numerals */
+.lp-how{background:#fff!important}
+.lp-steps{gap:0!important;border-top:2px solid var(--cv-navy)}
+.lp-step{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:30px 32px 8px 0!important;position:relative}
+.lp-step + .lp-step{padding-left:32px!important;border-left:1px solid var(--cv-rule)!important}
+.lp-num{position:static!important;display:block!important;width:auto!important;height:auto!important;background:none!important;box-shadow:none!important;color:var(--cv-silver)!important;font-family:var(--font-display);font-weight:900;font-size:44px!important;line-height:1;margin:0 0 14px!important;border-radius:0!important;text-align:left}
+.lp-num::before{content:"0"}
+.lp-ic{display:none!important}
+.lp-how-cta{justify-content:flex-start!important;text-align:left}
+.lp-btn,.loc-btn{border-radius:4px!important;background:var(--cv-navy)!important;box-shadow:none!important;font-family:var(--font-display);font-size:13.5px!important;letter-spacing:.04em;text-transform:uppercase}
+
+/* why cowboy */
+.cv-why{background:var(--cv-mist);padding:84px 0;border-top:1px solid var(--cv-rule);border-bottom:1px solid var(--cv-rule)}
+.cv-why .container{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:56px;align-items:start}
+.cv-why-head h2{font-size:clamp(1.7rem,2.8vw,2.3rem);line-height:1.15;margin:0 0 14px}
+.cv-why-head p:last-child{color:var(--cv-steel);margin:0}
+.cv-why-grid{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--cv-rule);border-radius:8px;overflow:hidden}
+.cv-why-item{padding:26px 28px;border-bottom:1px solid var(--cv-rule)}
+.cv-why-item:nth-child(odd){border-right:1px solid var(--cv-rule)}
+.cv-why-item:nth-last-child(-n+2){border-bottom:0}
+.cv-why-item h3{font-size:17px;font-weight:700;color:var(--cv-navy);margin:0 0 6px}
+.cv-why-item p{margin:0;color:var(--cv-steel);font-size:15.5px;line-height:1.5}
+.cv-why .wc-mc{grid-column:1 / -1;margin:0}
+
+/* vehicles */
+.hp-vehicles{background:#fff!important}
+.hp-veh{border-radius:8px!important;box-shadow:none!important;border:1px solid var(--cv-rule)!important}
+.hp-veh-ic{border-radius:6px!important;background:var(--cv-mist)!important;color:var(--cv-navy)!important}
+
+/* coverage: navy band */
+.loc-section{background:var(--cv-navy)!important;border:0!important}
+.loc-section .loc-eyebrow{color:var(--cv-silver)!important}
+.loc-section .loc-eyebrow::before{background:var(--cv-silver)}
+.loc-intro h2{color:#fff!important}
+.loc-sub{color:#cdd4de!important}
+.loc-points li{color:#e6eaf0!important}
+.loc-chk{background:rgba(176,184,196,.18)!important;color:#fff!important;border-radius:4px!important}
+.loc-section .loc-btn{background:#fff!important;color:var(--cv-navy)!important}
+.loc-routes{border-radius:8px!important;box-shadow:none!important}
+.loc-route-list a{border-radius:5px!important}
+.loc-states-label{color:var(--cv-silver)!important}
+.loc-states a{background:transparent!important;border:1px solid rgba(176,184,196,.4)!important;color:#e6eaf0!important;border-radius:4px!important}
+.loc-states a:hover{border-color:#fff!important}
+
+/* about */
+.hp-about-card{border-radius:8px!important;background:#fff!important;color:var(--cv-navy)!important;border:1px solid var(--cv-rule);border-left:5px solid var(--cv-navy);box-shadow:none!important}
+.hp-about-card .hp-ac-eyebrow{color:var(--cv-steel)!important}
+.hp-ac-row{border-color:var(--cv-rule)!important}
+.hp-ac-row b{color:var(--cv-navy)!important}
+.hp-ac-row span{color:var(--cv-steel)!important}
+
+/* faq: heading left, questions right */
+.faq-section{background:var(--cv-mist)!important}
+.faq-section .container{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:56px;align-items:start}
+.faq-head{text-align:left!important;margin:0!important;max-width:none!important}
+.faq-sub{margin-left:0!important;text-align:left!important}
+.faq-list{max-width:none!important;margin:0!important}
+.faq-item{border-radius:6px!important;box-shadow:none!important}
+
+/* closing band: text left, button right */
+.cta-band{background:var(--cv-navy)!important}
+.cta-band::before,.cta-band::after{display:none!important}
+.cta-inner{display:grid!important;grid-template-columns:1fr auto;align-items:center;gap:10px 40px;text-align:left!important;padding-top:56px!important;padding-bottom:56px!important}
+.cta-inner > *{margin-left:0!important;margin-right:0!important;text-align:left}
+.cta-eyebrow,.cta-inner h2,.cta-sub,.cta-trust{grid-column:1}
+.cta-actions{grid-column:2;grid-row:1 / span 4;justify-content:flex-end!important;align-self:center}
+.cta-trust{justify-content:flex-start!important}
+.cta-primary,.cta-secondary{border-radius:4px!important;font-family:var(--font-display);font-size:13.5px!important;letter-spacing:.04em;text-transform:uppercase;box-shadow:none!important}
+.site-footer{border-top:4px solid var(--cv-silver)}
+
+@media (max-width:900px){
+  .cv-trust ul{grid-template-columns:1fr 1fr}
+  .cv-why .container,.faq-section .container{grid-template-columns:1fr;gap:28px}
+  .lp-steps{border-top:0}
+  .lp-step,.lp-step + .lp-step{padding:24px 0 6px!important;border-left:0!important;border-top:2px solid var(--cv-navy)!important}
+  .cta-inner{grid-template-columns:1fr}
+  .cta-actions{grid-column:1;grid-row:auto;justify-content:flex-start!important}
+}
+@media (max-width:560px){
+  .cv-trust ul{grid-template-columns:1fr}
+  .cv-why-grid{grid-template-columns:1fr}
+  .cv-why-item:nth-child(odd){border-right:0}
+  .cv-why-item:nth-last-child(2){border-bottom:1px solid var(--cv-rule)}
+}
+.hero.hero-lite .hero-grid{padding-top:60px!important;padding-bottom:72px!important;align-items:center}
+.cta-inner{max-width:var(--maxw)!important;width:100%}
+.cta-inner h2{max-width:none!important}
+.hero.hero-lite .hero-grid{align-items:start!important}
+.hero.hero-lite .pquote{margin-top:0!important;top:auto!important;transform:none!important;align-self:start}
+@media (max-width:600px){.site-header .btn-call{padding:10px 11px!important;font-size:11.5px!important;letter-spacing:.02em!important}}
+.hero.hero-lite .hero-grid{padding-top:150px!important}
+@media (max-width:900px){.hero.hero-lite .hero-grid{padding-top:104px!important;padding-bottom:48px!important}}
+.hero.hero-lite .hero-creds svg{color:var(--cv-silver)!important;stroke:currentColor}
+
 </style>
 </head>
 <body>
@@ -942,12 +1092,11 @@ body.ready .reveal{opacity:1;transform:none}
     <a class="brand" href="#top" aria-label="Cowboy Vehicle Shipping — home"><img class="cv-mark" src="assets/mark.png" alt="" width="320" height="170"><span class="cv-word"><strong>COWBOY</strong><span>Vehicle Shipping</span></span></a>
 
     <nav class="main-nav" aria-label="Primary">
-      <a href="#top">Home</a>
-      <a href="#how">How It Works</a>
       <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#why">Why Cowboy</a>
       <a href="#locations">Coverage</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
     </nav>
 
     <a class="btn-call cv-nophone" id="cvHeaderCall" href="#pquote">
@@ -964,12 +1113,12 @@ body.ready .reveal{opacity:1;transform:none}
   <!-- mobile nav -->
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
     <div class="inner">
-      <a href="#top">Home</a>
-      <a href="#how">How It Works</a>
       <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#why">Why Cowboy</a>
       <a href="#locations">Coverage</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="#pquote">Get a Quote</a>
     </div>
   </nav>
 </header>
@@ -979,29 +1128,9 @@ body.ready .reveal{opacity:1;transform:none}
   <div class="hero-media" aria-hidden="true">
     <div class="hero-bg" aria-hidden="true">
       <svg class="hero-bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="hgWash" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#ffffff"/>
-            <stop offset="0.5" stop-color="#f3f7fe"/>
-            <stop offset="1" stop-color="#ebf2fc"/>
-          </linearGradient>
-          <radialGradient id="hgGlow" cx="0.82" cy="0.12" r="0.9">
-            <stop offset="0" stop-color="#e1eeff" stop-opacity="0.9"/>
-            <stop offset="1" stop-color="#e1eeff" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <rect width="1440" height="900" fill="url(#hgWash)"/>
-        <rect width="1440" height="900" fill="url(#hgGlow)"/>
-        <g fill="none" stroke="#cfe0f5" stroke-opacity="0.5" stroke-width="2">
-          <path d="M-60 720 C 360 640, 760 780, 1200 560 S 1560 360, 1620 300"/>
-          <path d="M-60 800 C 360 720, 760 860, 1200 640 S 1560 440, 1620 380"/>
-        </g>
-        <g stroke="#adc9ee" stroke-opacity="0.55" stroke-width="4" stroke-dasharray="26 22" stroke-linecap="round" fill="none">
-          <path d="M-60 762 C 360 682, 760 822, 1200 602 S 1560 402, 1620 342"/>
-        </g>
-        <g fill="#c6dbf6" fill-opacity="0.45">
-          <circle cx="1180" cy="300" r="5"/><circle cx="250" cy="250" r="4"/><circle cx="640" cy="180" r="3.5"/><circle cx="980" cy="150" r="3"/>
-        </g>
+        <rect width="1440" height="900" fill="#0a1d35"/>
+        <polygon points="330,60 452,410 822,410 523,628 637,980 330,764 23,980 137,628 -162,410 208,410" fill="#0c223e"/>
+        <rect x="0" y="892" width="1440" height="8" fill="#b0b8c4"/>
       </svg>
     </div>
   </div>
@@ -1009,14 +1138,15 @@ body.ready .reveal{opacity:1;transform:none}
   <div class="container hero-grid">
     <div class="hero-copy">
       <div class="hero-head">
-      <h1 class="reveal d2">Reliable Nationwide<br>Auto <span class="accent">Transport</span></h1>
+      <p class="cv-kicker reveal d2">Nationwide vehicle shipping</p>
+      <h1 class="reveal d2">Your Vehicle, Delivered <span class="accent">Door&nbsp;to&nbsp;Door</span></h1>
       </div>
       <div class="hero-rest">
-      <p class="lede reveal d2">Licensed, insured vehicle shipping with transparent pricing, vetted carriers, and support from quote to delivery.</p>
+      <p class="lede reveal d2">Cowboy Vehicle Shipping moves cars, trucks, SUVs and motorcycles anywhere in the United States, with upfront pricing and a real person on every shipment.</p>
       <div class="hero-badges reveal d3">
-        <div class="hb"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><b>Fully Insured Transport</b><small>Your vehicle is protected</small></span></div>
-        <div class="hb"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1.5" x2="12" y2="22.5"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span><b>Competitive Pricing</b><small>No hidden fees or surprises</small></span></div>
-        <div class="hb"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="4.4" height="7" rx="1.6"/><rect x="17.6" y="13" width="4.4" height="7" rx="1.6"/><path d="M20 19.5v.5a3 3 0 0 1-3 3h-3"/></svg></span><span><b>Dedicated Support</b><small>Real people. Real answers.</small></span></div>
+        <div class="hb"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><b>Insured Carriers</b><small>Verified before every pickup</small></span></div>
+        <div class="hb"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1.5" x2="12" y2="22.5"/><path d="M17 5.5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><span><b>Upfront Pricing</b><small>Nothing added at delivery</small></span></div>
+        <div class="hb"><span class="hb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="4.4" height="7" rx="1.6"/><rect x="17.6" y="13" width="4.4" height="7" rx="1.6"/><path d="M20 19.5v.5a3 3 0 0 1-3 3h-3"/></svg></span><span><b>Live Support</b><small>People who pick up the phone</small></span></div>
       </div>
       <div class="hero-creds reveal d3">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg>Licensed &amp; Insured</span>
@@ -1085,32 +1215,15 @@ body.ready .reveal{opacity:1;transform:none}
   </div>
 </section>
 
-<!-- ===================== STATS BAND ===================== -->
-<section class="hp-stats">
+<!-- ===================== TRUST STRIP ===================== -->
+<section class="cv-trust" aria-label="At a glance">
   <div class="container">
-    <div class="hp-stats-grid">
-      <div class="hp-stat"><span class="hp-stat-num">50</span><span class="hp-stat-lbl">States Covered</span></div>
-      <div class="hp-stat"><span class="hp-stat-num">100%</span><span class="hp-stat-lbl">Insured &amp; Bonded</span></div>
-      <div class="hp-stat"><span class="hp-stat-num">Free</span><span class="hp-stat-lbl">Instant Quotes</span></div>
-      <div class="hp-stat"><span class="hp-stat-num">Vetted</span><span class="hp-stat-lbl">Carrier Network</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== HOW IT WORKS ===================== -->
-<section class="lp-how" id="how">
-  <div class="container">
-    <div class="lp-head">
-      <p class="lp-eyebrow">How It Works</p>
-      <h2>Ship Your Car in 3 Simple Steps</h2>
-      <p class="lp-sub">From quote to delivery, Cowboy Vehicle Shipping makes nationwide car shipping easy, transparent, and fully insured.</p>
-    </div>
-    <div class="lp-steps">
-      <div class="lp-step"><span class="lp-num">1</span><span class="lp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Get an Instant Quote</h3><p>Enter your pickup, delivery, and vehicle details for a free, all-in price in seconds &mdash; no obligation, no hidden fees.</p></div>
-      <div class="lp-step"><span class="lp-num">2</span><span class="lp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.3a4 4 0 0 0-1.2-2.9L19 9h-5v8h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h3>Book &amp; Schedule Pickup</h3><p>We match you with a licensed, insured, and vetted carrier and schedule pickup around your preferred dates.</p></div>
-      <div class="lp-step"><span class="lp-num">3</span><span class="lp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><path d="m9 10 2 2 4-4"/></svg></span><h3>Track to Your Door</h3><p>Follow your shipment in real time and receive your vehicle safely at the destination &mdash; door to door, coast to coast.</p></div>
-    </div>
-    <div class="lp-how-cta"><a class="lp-btn" href="#pquote">Get Your Free Quote</a><span data-cv-needs-phone hidden>or call <a data-cv-tel href="#pquote"></a></span></div>
+    <ul>
+      <li><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7.3L12 17.8 5.7 21.5l1.7-7.3L2 9.500l7.1-.6z"/></svg> Pickup and delivery in all 50 states</li>
+      <li><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7.3L12 17.8 5.7 21.5l1.7-7.3L2 9.500l7.1-.6z"/></svg> Open and enclosed carriers</li>
+      <li><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7.3L12 17.8 5.7 21.5l1.7-7.3L2 9.500l7.1-.6z"/></svg> Insurance verified before dispatch</li>
+      <li><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.7 7.3L12 17.8 5.7 21.5l1.7-7.3L2 9.500l7.1-.6z"/></svg> Free quotes, no obligation</li>
+    </ul>
   </div>
 </section>
 
@@ -1118,19 +1231,56 @@ body.ready .reveal{opacity:1;transform:none}
 <section class="hp-services" id="services">
   <div class="container">
     <div class="hp-head">
-      <p class="hp-eyebrow">Our Services</p>
-      <h2>Complete Car Shipping Solutions</h2>
-      <p class="hp-sub">Whatever you're shipping and wherever it's headed, we have a transport option built for it — all fully insured, door to door.</p>
+      <p class="hp-eyebrow">What We Offer</p>
+      <h2>Transport Options for Every Move</h2>
+      <p class="hp-sub">Pick the service that fits your vehicle, your timeline and your budget.</p>
     </div>
     <div class="hp-serv-grid">
-      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.3a4 4 0 0 0-1.2-2.9L19 9h-5v8h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h3>Open Transport</h3><p>Our most popular, cost-effective way to ship your vehicle safely across the country.</p><span class="hp-serv-link">Get a quote &rarr;</span></a>
-      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Enclosed Transport</h3><p>Fully enclosed carriers for luxury, exotic, classic, and high-value vehicles.</p><span class="hp-serv-link">Get a quote &rarr;</span></a>
-      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><circle cx="15" cy="12" r="1"/></svg></span><h3>Door-to-Door</h3><p>We pick up and deliver as close to your doorstep as the truck can safely reach.</p><span class="hp-serv-link">Get a quote &rarr;</span></a>
-      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8Z"/></svg></span><h3>Expedited Shipping</h3><p>Priority pickup and faster transit when you're on a tight timeline.</p><span class="hp-serv-link">Get a quote &rarr;</span></a>
-      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 6l16 12M20 6 4 18M2 12h20"/></svg></span><h3>Snowbird Transport</h3><p>Seamless seasonal shipping between your northern and southern homes.</p><span class="hp-serv-link">Get a quote &rarr;</span></a>
-      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.2l1-5.8L3.5 9.2l5.9-.9L12 3Z"/></svg></span><h3>Military Transport</h3><p>Trusted, discounted auto transport for active-duty and relocating service members.</p><span class="hp-serv-link">Get a quote &rarr;</span></a>
+      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.3a4 4 0 0 0-1.2-2.9L19 9h-5v8h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h3>Open Carrier</h3><p>The standard way to ship and the most budget-friendly. Your vehicle rides on a multi-car open trailer.</p><span class="hp-serv-link">Price this service &rarr;</span></a>
+      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Enclosed Carrier</h3><p>A covered trailer that keeps weather and road debris off. Best for luxury, classic and exotic cars.</p><span class="hp-serv-link">Price this service &rarr;</span></a>
+      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><circle cx="15" cy="12" r="1"/></svg></span><h3>Door-to-Door Delivery</h3><p>We load at your address and unload at your destination, or as near as a truck can legally get.</p><span class="hp-serv-link">Price this service &rarr;</span></a>
+      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8Z"/></svg></span><h3>Rush Pickup</h3><p>Need it gone this week? Priority dispatch puts your vehicle on the first available truck.</p><span class="hp-serv-link">Price this service &rarr;</span></a>
+      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4 6l16 12M20 6 4 18M2 12h20"/></svg></span><h3>Seasonal Moves</h3><p>Heading south for winter or back north in spring? Send the car ahead and fly.</p><span class="hp-serv-link">Price this service &rarr;</span></a>
+      <a class="hp-serv" href="#pquote"><span class="hp-serv-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.2l1-5.8L3.5 9.2l5.9-.9L12 3Z"/></svg></span><h3>Military Moves</h3><p>PCS orders on short notice? We work around report dates and base access for service members.</p><span class="hp-serv-link">Price this service &rarr;</span></a>
     </div>
     
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="lp-how" id="how">
+  <div class="container">
+    <div class="lp-head">
+      <p class="lp-eyebrow">The Process</p>
+      <h2>Three Steps. One Delivered Vehicle.</h2>
+      <p class="lp-sub">Tell us where it's going. We line up the truck, the schedule and the updates.</p>
+    </div>
+    <div class="lp-steps">
+      <div class="lp-step"><span class="lp-num">1</span><span class="lp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z"/><path d="M9 13h6M9 17h4"/></svg></span><h3>Price Your Shipment</h3><p>Enter your ZIP codes and vehicle and see your price in under a minute. No cost and no commitment.</p></div>
+      <div class="lp-step"><span class="lp-num">2</span><span class="lp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.3a4 4 0 0 0-1.2-2.9L19 9h-5v8h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h3>Reserve Your Pickup</h3><p>Pick your dates and trailer type. We assign a licensed, insured carrier and confirm your pickup window.</p></div>
+      <div class="lp-step"><span class="lp-num">3</span><span class="lp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><path d="m9 10 2 2 4-4"/></svg></span><h3>Take Delivery</h3><p>We keep you posted while your vehicle is on the road, and the driver brings it to your door.</p></div>
+    </div>
+    <div class="lp-how-cta"><a class="lp-btn" href="#pquote">Price My Shipment</a><span data-cv-needs-phone hidden>or call <a data-cv-tel href="#pquote"></a></span></div>
+  </div>
+</section>
+
+<!-- ===================== WHY COWBOY ===================== -->
+<section class="cv-why" id="why">
+  <div class="container">
+    <div class="cv-why-head">
+      <p class="cv-eyebrow">The Cowboy Standard</p>
+      <h2>A Handshake Still Means Something Here</h2>
+      <p>What we commit to on every vehicle we move.</p>
+    </div>
+    <div class="cv-why-grid">
+      <div class="cv-why-item"><h3>Carriers We've Checked</h3><p>Operating authority and cargo insurance are verified before a truck is assigned to your vehicle.</p></div>
+      <div class="cv-why-item"><h3>A Price That Holds</h3><p>Your quote reflects your route, vehicle and dates, with no fees added at delivery.</p></div>
+      <div class="cv-why-item"><h3>Condition on Record</h3><p>The driver documents your vehicle on the bill of lading at pickup and again at delivery.</p></div>
+      <div class="cv-why-item"><h3>Updates Without Asking</h3><p>We reach out at dispatch, at pickup and before delivery, so you always know where things stand.</p></div>
+      <div class="cv-why-item"><h3>Open or Enclosed</h3><p>Choose the level of protection that suits your vehicle and your budget.</p></div>
+      <div class="cv-why-item"><h3>Real People on the Phone</h3><p>U.S.-based support from the same team that is handling your shipment.</p></div>
+    </div>
+    <p class="wc-mc" data-cv-needs-license hidden><span data-cv-license></span></p>
   </div>
 </section>
 
@@ -1138,17 +1288,17 @@ body.ready .reveal{opacity:1;transform:none}
 <section class="hp-vehicles">
   <div class="container">
     <div class="hp-head">
-      <p class="hp-eyebrow">What We Ship</p>
-      <h2>Every Vehicle, Handled with Care</h2>
-      <p class="hp-sub">From daily drivers to rare collectibles, we match each vehicle with the right carrier, equipment, and level of protection.</p>
+      <p class="hp-eyebrow">Vehicles</p>
+      <h2>If It Has Wheels, We Can Haul It</h2>
+      <p class="hp-sub">Each vehicle is paired with a carrier that has the right equipment for its size and condition.</p>
     </div>
     <div class="hp-veh-grid">
-      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.2A2 2 0 0 1 8.5 7.5h7a2 2 0 0 1 1.9 1.3L19 13"/><path d="M4 13h16v4a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1h-9v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1Z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg></span><div><h3>Sedans &amp; Coupes</h3><p>Standard cars shipped safely and affordably on open or enclosed carriers.</p></div></div>
-      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l1.2-4.5A2 2 0 0 1 6.1 6H16a2 2 0 0 1 1.9 1.4L19.5 12"/><path d="M2 12h19a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1v-1a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v1H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1Z"/><path d="M11 6v6"/><circle cx="7" cy="16" r="1.2"/><circle cx="17" cy="16" r="1.2"/></svg></span><div><h3>SUVs &amp; Trucks</h3><p>Larger vehicles and pickups transported nationwide with proper securing.</p></div></div>
-      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.1 7.2 21.6l.9-5.4L4.2 8.5l5.4-.8L12 2Z"/></svg></span><div><h3>Luxury &amp; Exotic</h3><p>High-value vehicles moved in fully enclosed, climate-conscious trailers.</p></div></div>
-      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Classic &amp; Vintage</h3><p>Careful, white-glove handling for collectible and antique automobiles.</p></div></div>
-      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M5.5 17h6l4-6h3M12 11l-2-3H7"/></svg></span><div><h3>Motorcycles</h3><p>Specialized equipment and securing for safe, damage-free motorcycle transport.</p></div></div>
-      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5Z"/></svg></span><div><h3>Non-Running Vehicles</h3><p>Inoperable vehicles loaded with winches and the right carrier for the job.</p></div></div>
+      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.6-4.2A2 2 0 0 1 8.5 7.5h7a2 2 0 0 1 1.9 1.3L19 13"/><path d="M4 13h16v4a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1h-9v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1Z"/><circle cx="7.5" cy="15.5" r="1"/><circle cx="16.5" cy="15.5" r="1"/></svg></span><div><h3>Cars &amp; Sedans</h3><p>Everyday vehicles, shipped on open or enclosed trailers.</p></div></div>
+      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l1.2-4.5A2 2 0 0 1 6.1 6H16a2 2 0 0 1 1.9 1.4L19.5 12"/><path d="M2 12h19a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1v-1a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v1H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1Z"/><path d="M11 6v6"/><circle cx="7" cy="16" r="1.2"/><circle cx="17" cy="16" r="1.2"/></svg></span><div><h3>Pickups &amp; SUVs</h3><p>Full-size trucks, crossovers and lifted vehicles.</p></div></div>
+      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 19.1 7.2 21.6l.9-5.4L4.2 8.5l5.4-.8L12 2Z"/></svg></span><div><h3>High-End &amp; Exotic</h3><p>Low-clearance loading in fully enclosed trailers.</p></div></div>
+      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Classics &amp; Collectibles</h3><p>Careful handling for restored and vintage vehicles.</p></div></div>
+      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="3"/><circle cx="18.5" cy="17" r="3"/><path d="M5.5 17h6l4-6h3M12 11l-2-3H7"/></svg></span><div><h3>Motorcycles</h3><p>Cruisers, sport bikes and touring bikes, secured for the trip.</p></div></div>
+      <div class="hp-veh"><span class="hp-veh-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5Z"/></svg></span><div><h3>Inoperable Vehicles</h3><p>Winch loading for vehicles that don't start.</p></div></div>
     </div>
   </div>
 </section>
@@ -1158,17 +1308,17 @@ body.ready .reveal{opacity:1;transform:none}
   <div class="container">
     <div class="loc-bento">
       <div class="loc-intro">
-        <p class="loc-eyebrow">Service Areas</p>
+        <p class="loc-eyebrow">Where We Go</p>
         <span class="loc-accent" aria-hidden="true"></span>
-        <h2>Nationwide Coverage, Coast to Coast</h2>
-        <p class="loc-sub">We move vehicles to and from all 50 states — from major metros to small towns, door to door.</p>
+        <h2>Every State. Every Major Route.</h2>
+        <p class="loc-sub">From city high-rises to rural driveways, we ship to and from all 50 states.</p>
         <ul class="loc-points">
-          <li><span class="loc-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>All 50 states &amp; D.C.</li>
-          <li><span class="loc-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Door-to-door pickup &amp; delivery</li>
-          <li><span class="loc-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Open &amp; enclosed on every lane</li>
-          <li><span class="loc-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Expedited options available</li>
+          <li><span class="loc-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>All 50 states and Washington, D.C.</li>
+          <li><span class="loc-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pickup and delivery at your address</li>
+          <li><span class="loc-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Open and enclosed trailers on every route</li>
+          <li><span class="loc-chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Rush pickup when you need it</li>
         </ul>
-        <a class="loc-btn" href="#pquote">Get a quote for your route
+        <a class="loc-btn" href="#pquote">Check the price for my route
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
@@ -1176,107 +1326,33 @@ body.ready .reveal{opacity:1;transform:none}
       <div class="loc-routes">
         <div class="loc-routes-head">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          <h3>Popular Routes</h3>
+          <h3>Routes We Run Often</h3>
         </div>
         <ul class="loc-route-list">
-          <li><a href="#pquote"><span>Los Angeles, CA</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>New York, NY</span></a></li>
-          <li><a href="#pquote"><span>Miami, FL</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Chicago, IL</span></a></li>
-          <li><a href="#pquote"><span>Dallas, TX</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Seattle, WA</span></a></li>
-          <li><a href="#pquote"><span>Atlanta, GA</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Los Angeles, CA</span></a></li>
-          <li><a href="#pquote"><span>Phoenix, AZ</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Denver, CO</span></a></li>
-          <li><a href="#pquote"><span>Boston, MA</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Miami, FL</span></a></li>
+          <li><a href="#pquote"><span>Dallas, TX</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Los Angeles, CA</span></a></li>
+          <li><a href="#pquote"><span>Houston, TX</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Chicago, IL</span></a></li>
+          <li><a href="#pquote"><span>New York, NY</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Miami, FL</span></a></li>
+          <li><a href="#pquote"><span>Denver, CO</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Atlanta, GA</span></a></li>
+          <li><a href="#pquote"><span>Seattle, WA</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Phoenix, AZ</span></a></li>
+          <li><a href="#pquote"><span>San Antonio, TX</span><svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>Nashville, TN</span></a></li>
         </ul>
       </div>
     </div>
 
         <div class="loc-states">
-      <span class="loc-states-label">States we serve:</span>
-      <a href="#pquote">Alabama</a>
-      <a href="#pquote">Alaska</a>
-      <a href="#pquote">Arizona</a>
-      <a href="#pquote">Arkansas</a>
-      <a href="#pquote">California</a>
-      <a href="#pquote">Colorado</a>
-      <a href="#pquote">Connecticut</a>
-      <a href="#pquote">Delaware</a>
-      <a href="#pquote">Florida</a>
-      <a href="#pquote">Georgia</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== WHY CHOOSE ===================== -->
-<section class="wc-section" id="why">
-  <div class="container">
-    <div class="wc-bento">
-      <div class="wc-head">
-        <p class="wc-eyebrow">Why Cowboy</p>
-        <span class="wc-eyebrow-line" aria-hidden="true"></span>
-        <h2>Why Choose Cowboy</h2>
-        <p class="wc-sub">A licensed, insured brokerage that treats your vehicle — and your time — like it matters.</p>
+      <span class="loc-states-label">We ship to:</span>
+        <a href="#pquote">Texas</a>
+        <a href="#pquote">California</a>
+        <a href="#pquote">Florida</a>
+        <a href="#pquote">New York</a>
+        <a href="#pquote">Arizona</a>
+        <a href="#pquote">Colorado</a>
+        <a href="#pquote">Georgia</a>
+        <a href="#pquote">Illinois</a>
+        <a href="#pquote">Tennessee</a>
+        <a href="#pquote">Washington</a>
+        <a href="#pquote">and 40 more</a>
       </div>
-
-      <div class="wc-creds">
-        <div class="wc-cred">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span>FMCSA<br>Licensed &amp; Bonded</span>
-        </div>
-        <div class="wc-cred">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/><path d="m9 14 2 2 4-4"/></svg>
-          <span>Fully Insured<br>Transport</span>
-        </div>
-        <div class="wc-cred">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.7 5.5 6 .9-4.35 4.2 1 6L12 17.8 6.65 20.1l1-6L3.3 9.9l6-.9L12 3.5Z"/></svg>
-          <span>All 50 States<br>Coast to Coast</span>
-        </div>
-        <div class="wc-cred">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="4.4" height="7" rx="1.6"/><rect x="17.6" y="13" width="4.4" height="7" rx="1.6"/><path d="M20 19.5v.5a3 3 0 0 1-3 3h-3"/></svg>
-          <span>Dedicated U.S.-Based<br>Support</span>
-        </div>
-      </div>
-
-      <div class="wc-bigs">
-        <article class="wc-big">
-          <img class="wc-big-ic" src="assets/ic-shield.png" alt="" loading="lazy" width="160" height="160">
-          <div class="wc-num"><span>01</span><span class="ln"></span></div>
-          <h3>Licensed &amp; Insured</h3>
-          <p>FMCSA-registered broker with every shipment fully insured and bonded.</p>
-          <svg class="wc-wm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-        </article>
-        <article class="wc-big">
-          <img class="wc-big-ic" src="assets/ic-tag.png" alt="" loading="lazy" width="160" height="160">
-          <div class="wc-num"><span>02</span><span class="ln"></span></div>
-          <h3>Transparent Pricing</h3>
-          <p>Upfront, all-in quotes — no hidden fees or surprise charges at delivery.</p>
-          <svg class="wc-wm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.6 9.3A2.6 2 0 0 0 12 7.9h-.6a2 2 0 0 0 0 4h1.2a2 2 0 0 1 0 4H12a2.6 2 0 0 1-2.6-1.4"/><path d="M12 6.4v1.5M12 16v1.6"/></svg>
-        </article>
-      </div>
-
-      <div class="wc-feats">
-        <div class="wc-feat">
-          <img src="assets/ic-network.png" alt="" loading="lazy" width="160" height="160">
-          <h4>Vetted Carrier Network</h4>
-          <p>We screen every carrier's license, safety record, and active insurance.</p>
-        </div>
-        <div class="wc-feat">
-          <img src="assets/ic-wallet.png" alt="" loading="lazy" width="160" height="160">
-          <h4>Open &amp; Enclosed Options</h4>
-          <p>Choose open transport for value or fully enclosed for extra protection.</p>
-        </div>
-        <div class="wc-feat">
-          <img src="assets/ic-location.png" alt="" loading="lazy" width="160" height="160">
-          <h4>Real-Time Tracking</h4>
-          <p>Follow your shipment from pickup all the way through final delivery.</p>
-        </div>
-        <div class="wc-feat">
-          <img src="assets/ic-headset.png" alt="" loading="lazy" width="160" height="160">
-          <h4>Dedicated Support</h4>
-          <p>Real, U.S.-based representatives by phone to guide your shipment.</p>
-        </div>
-      </div>
-    </div>
-
-    <p class="wc-mc" data-cv-needs-license hidden><span data-cv-license></span></p>
   </div>
 </section>
 
@@ -1285,25 +1361,25 @@ body.ready .reveal{opacity:1;transform:none}
   <div class="container">
     <div class="hp-about-grid">
       <div class="hp-about-copy">
-        <p class="hp-eyebrow">About Cowboy</p>
-        <h2>Nationwide Auto Transport You Can Trust</h2>
-        <p>Cowboy Vehicle Shipping is a licensed, fully insured auto-transport broker built on a simple idea: shipping a vehicle should be transparent, reliable, and stress-free. We connect you with a nationwide network of carefully vetted carriers and stay with you from your first quote through final delivery.</p>
-        <p>Every carrier in our network is screened for active licensing, safety record, and cargo insurance — so your vehicle is in trusted hands from pickup to drop-off, coast to coast.</p>
+        <p class="hp-eyebrow">About Us</p>
+        <h2>Vehicle Shipping Without the Runaround</h2>
+        <p>Cowboy Vehicle Shipping is a licensed, insured auto transport broker. We arrange the truck, confirm the schedule and stay on the shipment until your vehicle is in your driveway.</p>
+        <p>We work with carriers we have vetted for licensing, safety history and cargo coverage, on routes across all 50 states.</p>
         <div class="hp-about-points">
           <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Licensed &amp; FMCSA-registered<span data-cv-needs-license hidden> &mdash; <span data-cv-license></span></span></span></div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Every carrier vetted for license, safety &amp; active insurance</span></div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Transparent, all-in pricing with no hidden fees</span></div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Real, U.S.-based support you can count on</span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Carriers screened for authority, safety and insurance</span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Upfront pricing, with nothing added later</span></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>U.S.-based team from quote to delivery</span></div>
         </div>
       </div>
       <div class="hp-about-visual">
         <div class="hp-about-card">
-          <p class="hp-ac-eyebrow">Why Customers Choose Us</p>
+          <p class="hp-ac-eyebrow">On Every Shipment</p>
           <div class="hp-ac-rows">
-            <div class="hp-ac-row"><b>Licensed &amp; Insured</b><span>Fully bonded FMCSA broker</span></div>
-            <div class="hp-ac-row"><b>Vetted Carriers</b><span>Screened for safety &amp; insurance</span></div>
-            <div class="hp-ac-row"><b>All-In Pricing</b><span>No hidden fees or surprises</span></div>
-            <div class="hp-ac-row"><b>Door-to-Door</b><span>Nationwide, coast to coast</span></div>
+            <div class="hp-ac-row"><b>Insured Carriers</b><span>Coverage verified up front</span></div>
+            <div class="hp-ac-row"><b>Set Pickup Window</b><span>Confirmed before the truck rolls</span></div>
+            <div class="hp-ac-row"><b>Upfront Price</b><span>Nothing added at delivery</span></div>
+            <div class="hp-ac-row"><b>Delivered to You</b><span>Door to door, nationwide</span></div>
           </div>
         </div>
       </div>
@@ -1315,53 +1391,53 @@ body.ready .reveal{opacity:1;transform:none}
 <section class="faq-section" id="faq">
   <div class="container">
     <div class="faq-head">
-      <p class="faq-eyebrow">Questions?</p>
-      <h2>Frequently Asked Questions</h2>
+      <p class="faq-eyebrow">Good to Know</p>
+      <h2>Answers Before You Book</h2>
       <span class="faq-accent" aria-hidden="true"></span>
-      <p class="faq-sub">Everything you need to know before you ship.</p>
+      <p class="faq-sub">The questions customers ask us most.</p>
     </div>
 
     <div class="faq-list">
       <details class="faq-item" open>
-        <summary class="faq-q">How much does it cost to ship a vehicle?
+        <summary class="faq-q">What will it cost to ship my vehicle?
           <span class="faq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </summary>
-        <div class="faq-a">Your price depends on the distance, vehicle size, transport type (open or enclosed), and how quickly you need it. We give you an upfront, all-in quote with no hidden fees — the number you see is the number you pay.</div>
+        <div class="faq-a">It comes down to mileage, the size of the vehicle, open or enclosed trailer, and how soon you need pickup. Use the quote tool for an upfront price on your exact move, with no fees added later.</div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-q">How long will my shipment take?
+        <summary class="faq-q">How many days does shipping take?
           <span class="faq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </summary>
-        <div class="faq-a">Transit time depends on the route and distance. Once your vehicle is dispatched, we share an estimated delivery window and keep you updated from pickup to drop-off. Longer cross-country routes naturally take more time than regional moves.</div>
+        <div class="faq-a">That depends on the distance and the route. When your vehicle is dispatched we give you a delivery window, and we keep you updated until it arrives. Cross-country trips take longer than regional ones.</div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-q">Is my vehicle insured during transport?
+        <summary class="faq-q">Is my car covered while it's on the truck?
           <span class="faq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </summary>
-        <div class="faq-a">Yes. We only work with licensed, vetted carriers that carry active cargo insurance, and your vehicle is covered while it's on the truck. We're happy to share coverage details before you book.</div>
+        <div class="faq-a">Yes. Every carrier we assign holds active cargo insurance that covers your vehicle in transit. Ask us and we'll send the coverage details before you book.</div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-q">What's the difference between open and enclosed transport?
+        <summary class="faq-q">Open or enclosed: which should I pick?
           <span class="faq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </summary>
-        <div class="faq-a">Open transport is the most common and most affordable option and is safe for everyday vehicles. Enclosed transport adds extra protection from weather and road debris — a great choice for classic, luxury, or high-value vehicles.</div>
+        <div class="faq-a">Open trailers are the standard, lower-cost choice and work well for most vehicles. Enclosed trailers cost more and keep weather and road debris off, which suits classic, luxury and high-value vehicles.</div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-q">Do I have to pay a deposit upfront?
+        <summary class="faq-q">When do I pay?
           <span class="faq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </summary>
-        <div class="faq-a">Payment terms are confirmed when you book — we'll clearly explain exactly what's due and when, with no hidden fees or surprise charges at delivery. Getting a quote is always free and no-obligation.</div>
+        <div class="faq-a">We confirm payment terms when you book and spell out what is due and when. Quotes are always free, with no obligation.</div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-q">Can you ship a vehicle that doesn't run?
+        <summary class="faq-q">Can you move a car that won't start?
           <span class="faq-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </summary>
-        <div class="faq-a">Yes. We transport both operable and inoperable (non-running) vehicles — just let us know when you book so we assign a carrier with the right equipment, such as a winch.</div>
+        <div class="faq-a">Yes. Tell us it's inoperable when you request your quote so we send a carrier with a winch.</div>
       </details>
     </div>
   </div>
@@ -1370,12 +1446,12 @@ body.ready .reveal{opacity:1;transform:none}
 <!-- ===================== FINAL CTA ===================== -->
 <section class="cta-band" id="get-started">
   <div class="container cta-inner">
-    <p class="cta-eyebrow">Ready When You Are</p>
-    <h2>Ready to Ship Your Vehicle?</h2>
-    <p class="cta-sub">Get a free, no-obligation quote in about 60 seconds.</p>
+    <p class="cta-eyebrow">Let's Get Rolling</p>
+    <h2>Get Your Price in About a Minute</h2>
+    <p class="cta-sub">It's free, and there's no obligation to book.</p>
     <div class="cta-actions">
       <a class="cta-primary" href="#pquote">
-        Get Your Free Quote
+        Get My Free Quote
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
       <a class="cta-secondary" data-cv-needs-phone hidden data-cv-tel-href href="#pquote">
@@ -1384,9 +1460,9 @@ body.ready .reveal{opacity:1;transform:none}
       </a>
     </div>
     <ul class="cta-trust">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Licensed &amp; insured</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Free, no-obligation quotes</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Dedicated support</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Insured carriers</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No-cost quotes</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Real support</li>
     </ul>
   </div>
 </section>
@@ -1396,7 +1472,7 @@ body.ready .reveal{opacity:1;transform:none}
   <div class="container footer-top">
     <div class="f-brand">
       <img class="cv-flogo" src="assets/logo-reverse.png" alt="Cowboy Vehicle Shipping" width="440" height="248">
-      <p>Licensed, insured nationwide auto transport. Transparent pricing, vetted carriers, and real people from quote to delivery.</p>
+      <p>Door-to-door vehicle shipping across all 50 states, with vetted carriers and upfront pricing.</p>
     </div>
     <div class="f-col">
       <h4>Company</h4>
@@ -1410,12 +1486,12 @@ body.ready .reveal{opacity:1;transform:none}
     <div class="f-col">
       <h4>Services</h4>
       <ul>
-                        <li><a href="#pquote">Open Car Transport</a></li>
-        <li><a href="#pquote">Enclosed Auto Transport</a></li>
-        <li><a href="#pquote">Door-to-Door Shipping</a></li>
-        <li><a href="#pquote">Expedited Shipping</a></li>
-        <li><a href="#pquote">Snowbird Car Shipping</a></li>
-        <li><a href="#pquote">Military Car Shipping</a></li>
+                        <li><a href="#pquote">Open Carrier</a></li>
+        <li><a href="#pquote">Enclosed Carrier</a></li>
+        <li><a href="#pquote">Door-to-Door Delivery</a></li>
+        <li><a href="#pquote">Rush Pickup</a></li>
+        <li><a href="#pquote">Seasonal Moves</a></li>
+        <li><a href="#pquote">Military Moves</a></li>
       </ul>
     </div>
     <div class="f-col f-contact">
@@ -1423,11 +1499,11 @@ body.ready .reveal{opacity:1;transform:none}
       <div class="line" data-cv-needs-phone hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><a data-cv-tel href="#pquote"></a></div>
       <div class="line" data-cv-needs-email hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a data-cv-email href="#pquote"></a></div>
       <div class="line"><a href="#pquote" style="font-weight:700;color:#ffffff">Get an instant quote &rarr;</a></div>
-      <div class="line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Support when you need it</span></div>
+      <div class="line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>U.S.-based support team</span></div>
     </div>
   </div>
   <div class="container footer-states">
-      <span class="fs-label">States we serve:</span>
+      <span class="fs-label">Shipping to and from:</span>
       <a href="#pquote">Alabama</a>
       <a href="#pquote">Alaska</a>
       <a href="#pquote">Arizona</a>
