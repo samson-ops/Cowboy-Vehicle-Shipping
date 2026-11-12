@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cowboy Vehicle Shipping</title>
+<meta name="description" content="Cowboy Vehicle Shipping moves cars, trucks, SUVs and motorcycles across all 50 states. Open and enclosed transport, door-to-door service, and an instant online quote.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  ============================================================
+  SITE SETTINGS: edit these values, nothing else needs to change.
+  Leave a value empty ('') and the page hides that item.
+  ============================================================
+-->
+<script>
+  window.COWBOY = {
+    phoneDisplay: '',   // e.g. '(800) 555-0142'
+    phoneTel:     '',   // e.g. '+18005550142'
+    email:        '',   // e.g. 'quotes@cowboyvehicleshipping.com'
+    usdot:        '',   // e.g. '1234567'
+    mc:           ''    // e.g. '7654321'
+  };
+</script>
+
+<style>
+  /* Layout idea: white corporate header, deep navy hero with the quote tool as the
+     one raised object, then alternating white / mist bands on a 1180px grid. */
+  :root {
+    color-scheme: light;
+    --navy: #0A1D35;
+    --navy-deep: #06142A;
+    --navy-soft: #16304F;
+    --silver: #B0B8C4;
+    --steel: #56606E;
+    --mist: #F2F4F7;
+    --line: #DCE1E8;
+    --white: #FFFFFF;
+    --ink: #0E1B2C;
+    --font-display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Public Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+    --wrap: 1180px;
+    --radius: 6px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body {
+    margin: 0; background: var(--white); color: var(--ink);
+    font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+  :focus-visible { outline: 3px solid #6FA0E0; outline-offset: 3px; border-radius: 3px; }
+
+  .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { font-family: var(--font-display); font-stretch: 118%; text-wrap: balance; margin: 0; line-height: 1.1; letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); font-weight: 800; }
+  h3 { font-size: 1.1rem; font-weight: 700; line-height: 1.25; }
+  p { margin: 0; }
+  .eyebrow {
+    font-family: var(--font-display); font-stretch: 118%; font-weight: 700;
+    font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--steel);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::before { content: ""; width: 32px; height: 2px; background: var(--silver); }
+  .lede { color: var(--steel); font-size: 1.08rem; max-width: 62ch; }
+  .section-head { display: grid; gap: 14px; margin-bottom: 44px; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: 0.95rem;
+    letter-spacing: 0.03em; text-decoration: none; white-space: nowrap;
+    padding: 14px 24px; border-radius: var(--radius); border: 2px solid transparent;
+    transition: background-color .15s, color .15s, border-color .15s, transform .15s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-navy { background: var(--navy); color: var(--white); }
+  .btn-navy:hover { background: var(--navy-soft); }
+  .btn-white { background: var(--white); color: var(--navy); }
+  .btn-white:hover { background: var(--mist); }
+  .btn-ghost { border-color: rgba(255,255,255,.45); color: var(--white); }
+  .btn-ghost:hover { border-color: var(--white); }
+  .btn-outline { border-color: var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+
+  /* Top utility bar */
+  .topbar { background: var(--navy-deep); color: #C9D1DC; font-size: 0.82rem; }
+  .topbar .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+  .topbar span + span::before { content: "·"; margin: 0 10px; color: var(--steel); }
+  .topbar a { text-decoration: none; }
+  .topbar a:hover { color: var(--white); }
+
+  /* Header */
+  .site-header { position: sticky; top: 0; z-index: 50; background: var(--white); border-bottom: 1px solid var(--line); }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 76px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); }
+  .brand img { width: 74px; }
+  .brand-name { display: grid; line-height: 1; gap: 5px; }
+  .brand-name strong { font-family: var(--font-display); font-stretch: 125%; font-weight: 900; font-size: 1.5rem; letter-spacing: 0.01em; }
+  .brand-name span { font-family: var(--font-display); font-stretch: 112%; font-weight: 600; font-size: 0.6rem; letter-spacing: 0.3em; color: var(--steel); text-transform: uppercase; }
+  .nav { display: flex; align-items: center; gap: 28px; }
+  .nav a.link { text-decoration: none; font-weight: 600; font-size: 0.94rem; color: var(--ink); padding: 6px 0; border-bottom: 2px solid transparent; }
+  .nav a.link:hover { border-bottom-color: var(--navy); }
+  .header-cta { display: flex; align-items: center; gap: 14px; }
+  .header-phone { text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.02rem; color: var(--navy); white-space: nowrap; }
+  .header-cta .btn { padding: 11px 18px; font-size: 0.88rem; }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: var(--radius); padding: 9px 11px; cursor: pointer; color: var(--navy); }
+  .menu-btn svg { display: block; }
+
+  /* Hero */
+  .hero { position: relative; background: var(--navy); color: var(--white); overflow: hidden; }
+  .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: linear-gradient(90deg, var(--silver), #E6EAF0 45%, var(--steel)); }
+  .hero-art { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 480px); gap: 56px; align-items: start; padding-top: 72px; padding-bottom: 84px; }
+  .hero .eyebrow { color: var(--silver); }
+  .hero h1 { font-size: clamp(2.3rem, 5vw, 3.9rem); font-weight: 900; line-height: 1.02; margin: 20px 0 22px; }
+  .hero h1 em { font-style: normal; color: var(--silver); }
+  .hero-lede { font-size: 1.14rem; color: #D5DBE4; max-width: 54ch; }
+  .hero-points { list-style: none; padding: 0; margin: 34px 0 0; display: grid; gap: 18px; }
+  .hero-points li { display: grid; grid-template-columns: 42px 1fr; gap: 14px; align-items: start; }
+  .hero-points .ico { width: 42px; height: 42px; border: 1px solid rgba(176,184,196,.5); border-radius: var(--radius); display: grid; place-items: center; color: var(--silver); }
+  .hero-points strong { display: block; font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: 1rem; }
+  .hero-points span { color: #C1C9D4; font-size: 0.95rem; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+  .license { margin-top: 26px; font-size: 0.84rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--silver); font-variant-numeric: tabular-nums; }
+
+  /* Quote card */
+  .quote-card { background: var(--white); color: var(--ink); border-radius: 10px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.55); overflow: hidden; }
+  .quote-head { padding: 20px 24px 16px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .quote-head h2 { font-size: 1.25rem; font-weight: 800; color: var(--navy); }
+  .quote-head span { font-size: 0.82rem; color: var(--steel); white-space: nowrap; }
+  .quote-body { padding: 8px; }
+  .quote-body iframe { display: block; width: 100%; height: 700px; border: 0; }
+  .quote-preview { margin: 16px; padding: 44px 26px; border: 1.5px dashed var(--silver); border-radius: var(--radius); background: var(--mist); text-align: center; display: grid; gap: 12px; justify-items: center; }
+  .quote-preview img { width: 120px; }
+  .quote-preview strong { font-family: var(--font-display); font-stretch: 112%; font-size: 1.05rem; color: var(--navy); }
+  .quote-preview p { font-size: 0.93rem; color: var(--steel); max-width: 34ch; }
+
+  /* Stat strip */
+  .strip { border-bottom: 1px solid var(--line); }
+  .strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 30px 24px; border-left: 1px solid var(--line); display: grid; gap: 6px; align-content: start; }
+  .stat:first-child { border-left: 0; padding-left: 0; }
+  .stat b { font-family: var(--font-display); font-stretch: 122%; font-weight: 900; font-size: 1.9rem; color: var(--navy); line-height: 1; font-variant-numeric: tabular-nums; }
+  .stat span { color: var(--steel); font-size: 0.93rem; }
+
+  section.band { padding: 92px 0; }
+  .band-mist { background: var(--mist); }
+  .band-navy { background: var(--navy); color: var(--white); }
+  .band-navy .eyebrow { color: var(--silver); }
+  .band-navy .lede { color: #C9D1DC; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: step; border-top: 2px solid var(--navy); }
+  .step { padding: 30px 30px 6px 0; display: grid; gap: 12px; align-content: start; counter-increment: step; }
+  .step + .step { padding-left: 30px; border-left: 1px solid var(--line); }
+  .step::before { content: "0" counter(step); font-family: var(--font-display); font-stretch: 125%; font-weight: 900; font-size: 2.6rem; color: var(--silver); line-height: 1; }
+  .step p { color: var(--steel); font-size: 0.98rem; }
+  .steps-cta { margin-top: 40px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* Service cards */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: var(--radius); padding: 28px 26px; display: grid; gap: 12px; align-content: start; }
+  .card .ico { color: var(--navy); }
+  .card p { color: var(--steel); font-size: 0.97rem; }
+  .card a { font-weight: 700; font-size: 0.92rem; color: var(--navy); text-decoration: none; margin-top: 4px; }
+  .card a:hover { text-decoration: underline; }
+
+  /* Vehicles */
+  .split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 64px; align-items: start; }
+  .vehicle-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+  .vehicle-list li { padding: 20px 16px 20px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+  .vehicle-list li:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
+  .vehicle-list strong { font-family: var(--font-display); font-stretch: 112%; font-weight: 700; }
+  .vehicle-list span { color: var(--steel); font-size: 0.92rem; }
+
+  /* Routes */
+  .routes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .route { display: flex; align-items: center; justify-content: space-between; gap: 12px; text-decoration: none; padding: 18px 20px; border: 1px solid rgba(176,184,196,.35); border-radius: var(--radius); font-weight: 600; transition: background-color .15s, border-color .15s; }
+  .route:hover { background: var(--navy-soft); border-color: var(--silver); }
+  .route svg { color: var(--silver); flex: none; }
+  .route small { display: block; font-weight: 400; color: #AEB8C6; font-size: 0.82rem; }
+  .states { margin-top: 34px; padding-top: 26px; border-top: 1px solid rgba(176,184,196,.3); color: #AEB8C6; font-size: 0.9rem; line-height: 2; }
+
+  /* Why */
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .why-item { padding: 30px 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); display: grid; gap: 10px; align-content: start; }
+  .why-item .ico { color: var(--navy); }
+  .why-item p { color: var(--steel); font-size: 0.96rem; }
+
+  /* FAQ */
+  .faq { display: grid; gap: 0; border-top: 2px solid var(--navy); }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 22px 44px 22px 0; position: relative; font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: 1.05rem; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 400; color: var(--steel); }
+  .faq details[open] summary::after { content: "\2212"; }
+  .faq details p { padding: 0 44px 24px 0; color: var(--steel); max-width: 70ch; }
+
+  /* Closing CTA */
+  .closing { background: var(--navy-deep); color: var(--white); padding: 76px 0; position: relative; overflow: hidden; }
+  .closing .wrap { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .closing h2 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); }
+  .closing p { color: #C9D1DC; margin-top: 12px; max-width: 52ch; }
+  .closing-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* Footer */
+  .site-footer { background: var(--navy); color: #C1C9D4; padding: 64px 0 28px; font-size: 0.93rem; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 44px; }
+  .footer-grid img { width: 190px; margin-bottom: 18px; }
+  .site-footer h4 { font-family: var(--font-display); font-stretch: 118%; font-weight: 700; font-size: 0.76rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); margin: 0 0 16px; }
+  .site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+  .site-footer a { text-decoration: none; }
+  .site-footer a:hover { color: var(--white); text-decoration: underline; }
+  .footer-base { margin-top: 48px; padding-top: 22px; border-top: 1px solid rgba(176,184,196,.25); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.84rem; color: #9AA5B4; font-variant-numeric: tabular-nums; }
+
+  @media (max-width: 1040px) {
+    .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--white); border-bottom: 1px solid var(--line); padding: 12px 24px 20px; flex-direction: column; align-items: stretch; gap: 4px; }
+    .nav.open { display: flex; }
+    .nav a.link { padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .menu-btn { display: block; }
+    .hero .wrap { grid-template-columns: 1fr; gap: 44px; padding-top: 52px; padding-bottom: 64px; }
+    .quote-card { max-width: 520px; width: 100%; }
+    .cards, .routes, .why { grid-template-columns: repeat(2, 1fr); }
+    .split { grid-template-columns: 1fr; gap: 36px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 680px) {
+    body { font-size: 16px; }
+    section.band { padding: 64px 0; }
+    .header-phone { display: none; }
+    .brand img { width: 58px; }
+    .brand-name strong { font-size: 1.2rem; }
+    .brand-name span { font-size: 0.5rem; }
+    .strip .wrap { grid-template-columns: 1fr 1fr; }
+    .stat { padding: 22px 16px; }
+    .stat:nth-child(odd) { border-left: 0; padding-left: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .steps { grid-template-columns: 1fr; }
+    .step, .step + .step { padding: 26px 0 22px; border-left: 0; }
+    .step + .step { border-top: 1px solid var(--line); }
+    .cards, .routes, .why, .vehicle-list, .footer-grid { grid-template-columns: 1fr; }
+    .vehicle-list li:nth-child(even) { padding-left: 0; border-left: 0; }
+    .topbar .hide-sm { display: none; }
+  }
+  @media (max-width: 420px) {
+    .wrap { padding: 0 16px; }
+    .header-cta .btn { padding: 10px 12px; font-size: 0.8rem; }
+    .brand-name span { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .route { transition: none; }
+    .btn:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div><span>Nationwide auto transport</span><span class="hide-sm">Open and enclosed carriers</span><span class="hide-sm">Door-to-door service</span></div>
+    <div>
+      <span data-show="phone" hidden>Call <a data-phone-link data-phone-text href="#quote"></a></span>
+      <span data-show="email" hidden><a data-email-link data-email-text href="#quote"></a></span>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cowboy Vehicle Shipping home">
+      <img src="assets/mark.png" alt="" width="320" height="170">
+      <span class="brand-name"><strong>COWBOY</strong><span>Vehicle Shipping</span></span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a class="link" href="#how-it-works">How It Works</a>
+      <a class="link" href="#services">Services</a>
+      <a class="link" href="#what-we-ship">What We Ship</a>
+      <a class="link" href="#coverage">Coverage</a>
+      <a class="link" href="#why-cowboy">Why Cowboy</a>
+      <a class="link" href="#faq">FAQ</a>
+    </nav>
+    <div class="header-cta">
+      <a class="header-phone" data-show="phone" data-phone-link data-phone-text href="#quote" hidden></a>
+      <a class="btn btn-navy" href="#quote">Get a Quote</a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-art" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <polygon points="1130,-60 1218,196 1490,196 1270,356 1354,614 1130,456 906,614 990,356 770,196 1042,196" fill="none" stroke="#1B3859" stroke-width="10" stroke-linejoin="miter"/>
+      <path d="M-80 720 C 320 420, 760 300, 1500 250" fill="none" stroke="#B0B8C4" stroke-opacity=".16" stroke-width="3"/>
+      <path d="M-80 770 C 340 480, 780 350, 1500 300" fill="none" stroke="#B0B8C4" stroke-opacity=".08" stroke-width="22"/>
+    </svg>
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Nationwide Auto Transport</div>
+        <h1>Vehicle shipping across all 50 states. <em>Straight talk, no surprises.</em></h1>
+        <p class="hero-lede">Cowboy Vehicle Shipping moves cars, trucks, SUVs and motorcycles door to door with vetted carriers, clear pricing and a real person on your shipment from quote to delivery.</p>
+        <ul class="hero-points">
+          <li>
+            <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.500-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <div><strong>Insured transport</strong><span>Your vehicle rides with carriers that hold active cargo insurance.</span></div>
+          </li>
+          <li>
+            <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 6.500c-1-1.500-2.800-2-5-2-2.800 0-4.500 1.300-4.500 3.300 0 4.700 10 2.200 10 7.200 0 2.200-2 3.500-5.500 3.500-2.500 0-4.500-.8-5.500-2.500"/></svg></span>
+            <div><strong>Clear pricing</strong><span>One quote that covers the move. No hidden fees added later.</span></div>
+          </li>
+          <li>
+            <span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0116 0v1"/><rect x="2.500" y="13" width="4.500" height="6.500" rx="1.500"/><rect x="17" y="13" width="4.500" height="6.500" rx="1.500"/><path d="M19.500 19.500c0 1.500-2 2.500-5 2.500"/></svg></span>
+            <div><strong>Dedicated support</strong><span>Real people who answer the phone and know your shipment.</span></div>
+          </li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-ghost" data-show="phone" data-phone-link href="#quote" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+            <span data-phone-text></span>
+          </a>
+        </div>
+        <p class="license" data-show="license" hidden></p>
+      </div>
+
+      <!-- QUOTE TOOL -->
+      <div class="quote-card" id="quote">
+        <div class="quote-head">
+          <h2>Get your instant quote</h2>
+          <span>Free, no obligation</span>
+        </div>
+        <div class="quote-body" id="quote-body">
+          <!-- BeRocker pricing widget. The script at the bottom of the page loads it from data-src. -->
+          <iframe id="quote-frame"
+                  data-src="https://widget.berocker.com?theme=flux&api_base=https%3A%2F%2Fapp.shipguy.com&api_key=6af51cfdd952d"
+                  width="100%" loading="eager"
+                  title="Cowboy Vehicle Shipping instant quote and booking form"></iframe>
+          <noscript>
+            <iframe src="https://widget.berocker.com?theme=flux&api_base=https%3A%2F%2Fapp.shipguy.com&api_key=6af51cfdd952d" width="100%" title="Cowboy Vehicle Shipping instant quote and booking form"></iframe>
+          </noscript>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAT STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <div class="stat"><b>50</b><span>States served, plus Washington, D.C.</span></div>
+      <div class="stat"><b>2</b><span>Trailer options: open or enclosed</span></div>
+      <div class="stat"><b>$0</b><span>Cost to get an instant quote</span></div>
+      <div class="stat"><b>1</b><span>Point of contact from pickup to delivery</span></div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="band" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How It Works</div>
+        <h2>Three steps from quote to driveway</h2>
+        <p class="lede">Shipping a vehicle should be simple. Tell us where it is and where it's going, and we handle the carrier, the schedule and the updates.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Get your instant quote</h3>
+          <p>Enter your pickup and delivery ZIP codes, your vehicle and your timeframe. You see your price right away.</p>
+        </div>
+        <div class="step">
+          <h3>Book and schedule pickup</h3>
+          <p>Choose open or enclosed transport and confirm your dates. We assign a vetted carrier and confirm the pickup window with you.</p>
+        </div>
+        <div class="step">
+          <h3>Delivered to your door</h3>
+          <p>The driver inspects the vehicle with you at pickup and again at delivery. We keep you posted the whole way.</p>
+        </div>
+      </div>
+      <div class="steps-cta">
+        <a class="btn btn-navy" href="#quote">Get Your Free Quote</a>
+        <a class="btn btn-outline" data-show="phone" data-phone-link href="#quote" hidden>Call <span data-phone-text></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="band band-mist" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Services</div>
+        <h2>The right transport for every move</h2>
+        <p class="lede">Daily drivers, collector cars, seasonal moves and military relocations. Pick the service that fits and get a price in under a minute.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <svg class="ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7"/><circle cx="6" cy="17.500" r="1.800"/><circle cx="18" cy="17.500" r="1.800"/></svg>
+          <h3>Open Transport</h3>
+          <p>The standard, most economical way to ship. Your vehicle travels on a multi-car open trailer, the same way dealers move new inventory.</p>
+          <a href="#quote">Quote open transport →</a>
+        </article>
+        <article class="card">
+          <svg class="ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="10" rx="1"/><path d="M16 11h3.500l2.500 3v2h-6M6 6v10M11 6v10"/><circle cx="6" cy="17.500" r="1.800"/><circle cx="18.500" cy="17.500" r="1.800"/></svg>
+          <h3>Enclosed Transport</h3>
+          <p>Fully covered protection from weather and road debris. The choice for luxury, exotic, classic and low-clearance vehicles.</p>
+          <a href="#quote">Quote enclosed transport →</a>
+        </article>
+        <article class="card">
+          <svg class="ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>
+          <h3>Door-to-Door</h3>
+          <p>Pickup and delivery at your address, or as close as a truck can safely and legally get. No terminals and no extra trips.</p>
+          <a href="#quote">Quote door-to-door →</a>
+        </article>
+        <article class="card">
+          <svg class="ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.500 2.500M9 2h6"/></svg>
+          <h3>Expedited Shipping</h3>
+          <p>On a deadline? Priority dispatch puts your vehicle at the front of the line for the earliest available pickup.</p>
+          <a href="#quote">Quote expedited →</a>
+        </article>
+        <article class="card">
+          <svg class="ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+          <h3>Snowbird Shipping</h3>
+          <p>Seasonal moves between northern and southern states. Fly down and have your car waiting, then send it home in spring.</p>
+          <a href="#quote">Quote a seasonal move →</a>
+        </article>
+        <article class="card">
+          <svg class="ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.600 5.600 6 .700-4.500 4.100 1.300 6-5.400-3.100-5.400 3.100 1.300-6L3.400 9.300l6-.700z"/></svg>
+          <h3>Military Relocation</h3>
+          <p>PCS orders move fast. We work around report dates and base access rules to get service members' vehicles there on time.</p>
+          <a href="#quote">Quote a PCS move →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE SHIP -->
+  <section class="band" id="what-we-ship">
+    <div class="wrap split">
+      <div class="section-head" style="margin-bottom:0">
+        <div class="eyebrow">What We Ship</div>
+        <h2>If it has wheels, we can move it</h2>
+        <p class="lede">Every vehicle is matched to a carrier with the right equipment for its size, ground clearance and condition.</p>
+        <div><a class="btn btn-navy" href="#quote">Price My Vehicle</a></div>
+      </div>
+      <ul class="vehicle-list">
+        <li><strong>Sedans &amp; Coupes</strong><span>Daily drivers and commuter cars</span></li>
+        <li><strong>SUVs &amp; Trucks</strong><span>Crossovers, pickups and lifted trucks</span></li>
+        <li><strong>Luxury &amp; Exotic</strong><span>Enclosed, low-clearance loading</span></li>
+        <li><strong>Classic &amp; Vintage</strong><span>Collector and show vehicles</span></li>
+        <li><strong>Motorcycles</strong><span>Cruisers, sport bikes and touring bikes</span></li>
+        <li><strong>Non-Running Vehicles</strong><span>Winch-equipped carriers for inoperable cars</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COVERAGE -->
+  <section class="band band-navy" id="coverage">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Coverage</div>
+        <h2>Coast to coast, border to border</h2>
+        <p class="lede">We ship to and from all 50 states and Washington, D.C. These are some of the lanes customers ask about most.</p>
+      </div>
+      <div class="routes">
+        <a class="route" href="#quote"><span>Dallas to Los Angeles<small>Texas to California</small></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="route" href="#quote"><span>New York to Miami<small>New York to Florida</small></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="route" href="#quote"><span>Houston to Chicago<small>Texas to Illinois</small></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="route" href="#quote"><span>Los Angeles to New York<small>California to New York</small></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="route" href="#quote"><span>Atlanta to Denver<small>Georgia to Colorado</small></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="route" href="#quote"><span>Seattle to Phoenix<small>Washington to Arizona</small></span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <p class="states">Alabama · Alaska · Arizona · Arkansas · California · Colorado · Connecticut · Delaware · Florida · Georgia · Hawaii · Idaho · Illinois · Indiana · Iowa · Kansas · Kentucky · Louisiana · Maine · Maryland · Massachusetts · Michigan · Minnesota · Mississippi · Missouri · Montana · Nebraska · Nevada · New Hampshire · New Jersey · New Mexico · New York · North Carolina · North Dakota · Ohio · Oklahoma · Oregon · Pennsylvania · Rhode Island · South Carolina · South Dakota · Tennessee · Texas · Utah · Vermont · Virginia · Washington · West Virginia · Wisconsin · Wyoming · Washington, D.C.</p>
+    </div>
+  </section>
+
+  <!-- WHY COWBOY -->
+  <section class="band band-mist" id="why-cowboy">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why Cowboy</div>
+        <h2>We do what we say we'll do</h2>
+        <p class="lede">Auto transport runs on trust. Here is what you can hold us to on every shipment.</p>
+      </div>
+      <div class="why">
+        <div class="why-item">
+          <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.500-3 7.600-7 9-4-1.400-7-4.500-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Insured carriers only</h3>
+          <p>We verify each carrier's operating authority and cargo insurance before your vehicle is assigned.</p>
+        </div>
+        <div class="why-item">
+          <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.500"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          <h3>Transparent pricing</h3>
+          <p>Your quote is built from your route, vehicle and timing. What you see is what you pay.</p>
+        </div>
+        <div class="why-item">
+          <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20c.500-3.500 3-5.500 6.500-5.500s6 2 6.500 5.500M16 5.500a3.500 3.500 0 010 6M18.500 14.500c1.800.800 2.800 2.500 3 5"/></svg>
+          <h3>Vetted carrier network</h3>
+          <p>We work with experienced drivers who have a track record of clean, on-time deliveries.</p>
+        </div>
+        <div class="why-item">
+          <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7"/><circle cx="6" cy="17.500" r="1.800"/><circle cx="18" cy="17.500" r="1.800"/></svg>
+          <h3>Open and enclosed options</h3>
+          <p>Choose the level of protection that fits your vehicle and your budget.</p>
+        </div>
+        <div class="why-item">
+          <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.200-7-11a7 7 0 0114 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>
+          <h3>Updates along the way</h3>
+          <p>You hear from us at dispatch, at pickup and before delivery, so you always know where things stand.</p>
+        </div>
+        <div class="why-item">
+          <svg class="ico" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0116 0v1"/><rect x="2.500" y="13" width="4.500" height="6.500" rx="1.500"/><rect x="17" y="13" width="4.500" height="6.500" rx="1.500"/></svg>
+          <h3>One team, start to finish</h3>
+          <p>The people who quote your shipment are the people who see it through to delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" id="faq">
+    <div class="wrap split">
+      <div class="section-head" style="margin-bottom:0">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions we hear every day</h2>
+        <p class="lede">Don't see yours? Request a quote and ask us anything about your shipment.</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>How much does it cost to ship a vehicle?</summary>
+          <p>Price depends on distance, route, vehicle size, trailer type, whether the vehicle runs, and how soon you need it picked up. The quote tool at the top of this page gives you a price for your exact move in under a minute.</p>
+        </details>
+        <details>
+          <summary>How long does shipping take?</summary>
+          <p>Transit time depends mostly on distance. Short regional moves often deliver within a few days of pickup, and coast-to-coast moves typically take about a week or more. We give you a pickup window and a delivery estimate when you book.</p>
+        </details>
+        <details>
+          <summary>Is my vehicle insured during transport?</summary>
+          <p>Yes. Carriers are required to carry cargo insurance that covers the vehicles on their trailer. The driver documents your vehicle's condition on a bill of lading at pickup and again at delivery.</p>
+        </details>
+        <details>
+          <summary>Should I choose open or enclosed transport?</summary>
+          <p>Open transport is the standard choice and costs less. Enclosed transport costs more and shields the vehicle from weather and road debris, which makes it the usual pick for luxury, classic and exotic vehicles.</p>
+        </details>
+        <details>
+          <summary>Can you ship a vehicle that doesn't run?</summary>
+          <p>Yes. Tell us in the quote form that the vehicle is inoperable so we can assign a carrier with a winch. The vehicle needs to roll, steer and brake to be loaded.</p>
+        </details>
+        <details>
+          <summary>How should I prepare my vehicle for pickup?</summary>
+          <p>Wash it so existing marks are easy to document, remove personal items and toll tags, leave about a quarter tank of fuel, and have a set of keys ready for the driver.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing">
+    <div class="wrap">
+      <div>
+        <h2>Ready to ship your vehicle?</h2>
+        <p>Get your price now. It's free, it takes about a minute, and there's no obligation to book.</p>
+      </div>
+      <div class="closing-actions">
+        <a class="btn btn-white" href="#quote">Get My Instant Quote</a>
+        <a class="btn btn-ghost" data-show="phone" data-phone-link href="#quote" hidden>Call <span data-phone-text></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo-reverse.png" alt="Cowboy Vehicle Shipping" width="720" height="406">
+        <p>Nationwide vehicle shipping with vetted carriers, clear pricing and people who pick up the phone.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#why-cowboy">Why Cowboy</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Open Transport</a></li>
+          <li><a href="#services">Enclosed Transport</a></li>
+          <li><a href="#services">Door-to-Door</a></li>
+          <li><a href="#services">Expedited Shipping</a></li>
+          <li><a href="#services">Snowbird Shipping</a></li>
+          <li><a href="#services">Military Relocation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="#quote">Get an instant quote</a></li>
+          <li data-show="phone" hidden><a data-phone-link data-phone-text href="#quote"></a></li>
+          <li data-show="email" hidden><a data-email-link data-email-text href="#quote"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© <span id="year">2026</span> Cowboy Vehicle Shipping. All rights reserved.</span>
+      <span data-show="license" hidden></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cfg = window.COWBOY || {};
+  function each(sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
+
+  // Phone, email and license details appear only when set in SITE SETTINGS.
+  if (cfg.phoneDisplay) {
+    each('[data-phone-text]', function (el) { el.textContent = cfg.phoneDisplay; });
+    each('[data-phone-link]', function (el) { el.setAttribute('href', 'tel:' + (cfg.phoneTel || cfg.phoneDisplay.replace(/[^\d+]/g, ''))); });
+    each('[data-show="phone"]', function (el) { el.hidden = false; });
+  }
+  if (cfg.email) {
+    each('[data-email-text]', function (el) { el.textContent = cfg.email; });
+    each('[data-email-link]', function (el) { el.setAttribute('href', 'mailto:' + cfg.email); });
+    each('[data-show="email"]', function (el) { el.hidden = false; });
+  }
+  var lic = [];
+  if (cfg.usdot) lic.push('USDOT ' + cfg.usdot);
+  if (cfg.mc) lic.push('MC ' + cfg.mc);
+  if (lic.length) each('[data-show="license"]', function (el) { el.textContent = lic.join('  ·  '); el.hidden = false; });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  var btn = document.getElementById('menu-btn'), nav = document.getElementById('site-nav');
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+  });
+
+  // Quote widget. On the live site (page is the top window) the iframe loads normally.
+  // Inside a preview frame, outside embeds are blocked, so a labeled placeholder shows instead.
+  var frame = document.getElementById('quote-frame');
+  var framed = false;
+  try { framed = window.self !== window.top; } catch (e) { framed = true; }
+  if (framed) {
+    document.getElementById('quote-body').innerHTML =
+      '<div class="quote-preview"><img src="assets/mark.png" alt="">' +
+      '<strong>Instant quote tool loads here</strong>' +
+      '<p>Preview only. Once this page is live on your domain, the pricing and booking form appears in this panel.</p></div>';
+  } else {
+    frame.src = frame.getAttribute('data-src');
+    // If the widget reports its height, fit the frame to it.
+    window.addEventListener('message', function (e) {
+      if (e.origin !== 'https://widget.berocker.com') return;
+      var d = e.data, h = null;
+      if (typeof d === 'number') h = d;
+      else if (d && typeof d === 'object') h = d.height || d.frameHeight || (d.payload && d.payload.height);
+      else if (typeof d === 'string') { try { var o = JSON.parse(d); h = o.height || o.frameHeight; } catch (err) {} }
+      h = parseInt(h, 10);
+      if (h > 200 && h < 4000) frame.style.height = h + 'px';
+    });
+  }
+})();
+</script>
+</body>
+</html>
